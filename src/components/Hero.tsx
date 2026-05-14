@@ -7,7 +7,7 @@ import { CiLinkedin } from "react-icons/ci";
 import { FaGithub } from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";
-
+import portfolio from "../../public/image/portfolio.png";
 export default function Hero() {
   return (
     <section
@@ -370,15 +370,14 @@ export default function Hero() {
                 </span>
               </div>
 
-              {/* 
               <Image
-                src="/profile.png"
+                src={portfolio}
                 alt="Shubham Semwal"
+                sizes="500px"
                 fill
                 className="object-cover"
                 priority
               />
-              */}
             </div>
           </motion.div>
         </div>
