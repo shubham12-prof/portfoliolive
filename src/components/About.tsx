@@ -6,7 +6,7 @@ import { Boxes, Database, Rocket } from "lucide-react";
 
 const stats = [
   { number: "2+", label: "Years Experience" },
-  { number: "15+", label: "Projects Built" },
+  { number: "10+", label: "Projects Built" },
   { number: "95+", label: "Lighthouse Score" },
 ];
 
@@ -14,7 +14,7 @@ const approaches = [
   {
     icon: Boxes,
     number: "01",
-    title: "Scalable Frontend Systems",
+    title: "Scalable Full-Stack Systems",
     description:
       "Building reusable component architectures using React, Next.js, and TypeScript.",
   },
