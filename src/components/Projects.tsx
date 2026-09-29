@@ -58,6 +58,16 @@ const projects: Project[] = [
     type: "client",
   },
   {
+    title: "LearningHub JS ",
+    description:
+      "Learning Hub is a developer-focused learning platform designed to help you master JavaScript, React, Next.js, and Node.js through structured learning paths, practical code examples, and interview-focused preparation. With 300+ concepts, 500+ code examples, and organized learning resources, it makes learning, revising, and strengthening your development skills easier in one place.",
+    image: "/projects/learninghub.png",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Lucide React"],
+    liveUrl: "https://learninghub-gray.vercel.app/",
+    githubUrl: "https://github.com/shubham12-prof/learninghub",
+    type: "personal",
+  },
+  {
     title: "Drip Store",
     description:
       "Modern e-commerce platform built using TypeScript, Prisma ORM, PostgreSQL, JWT authentication, and scalable backend APIs.",
