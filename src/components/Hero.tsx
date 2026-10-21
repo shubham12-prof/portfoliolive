@@ -2,12 +2,51 @@
 
 import { motion } from "framer-motion";
 
-import { Download, ArrowRight } from "lucide-react";
+import { Download, ArrowRight, Mail, Gauge } from "lucide-react";
 import { CiLinkedin } from "react-icons/ci";
 import { FaGithub } from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";
 import portfolio from "../../public/image/portfolio.png";
+
+const techStack = [
+  "React",
+  "Next.js",
+  "TypeScript",
+  "Tailwind CSS",
+  "Node.js",
+  "PostgreSQL",
+];
+
+const proofPoints = [
+  "100/100 Lighthouse Performance",
+  "100/100 SEO & Best Practices",
+];
+
+const socialLinks = [
+  {
+    label: "Email Shubham Semwal",
+    href: "mailto:shubhsemwal12@gmail.com",
+    icon: <Mail size={20} />,
+    hover: "hover:border-pink-400/30 hover:bg-pink-500/10",
+    external: false,
+  },
+  {
+    label: "Shubham Semwal on LinkedIn",
+    href: "https://linkedin.com/in/shubham-semwal-224540172",
+    icon: <CiLinkedin size={20} />,
+    hover: "hover:border-violet-400/30 hover:bg-violet-500/10",
+    external: true,
+  },
+  {
+    label: "Shubham Semwal on GitHub",
+    href: "https://github.com/shubham12-prof",
+    icon: <FaGithub size={20} />,
+    hover: "hover:border-cyan-400/30 hover:bg-cyan-500/10",
+    external: true,
+  },
+];
+
 export default function Hero() {
   return (
     <section
@@ -32,6 +71,7 @@ export default function Hero() {
           bg-violet-500/20
           rounded-full
           blur-3xl
+          pointer-events-none
         "
       />
 
@@ -44,6 +84,7 @@ export default function Hero() {
           bg-cyan-500/20
           rounded-full
           blur-3xl
+          pointer-events-none
         "
       />
 
@@ -80,7 +121,7 @@ export default function Hero() {
                   mb-6
                 "
               >
-                Full-Stack Engineer
+                React / Next.js Developer
               </div>
 
               <h1
@@ -105,10 +146,10 @@ export default function Hero() {
                     text-transparent
                   "
                 >
-                  Scalable Web
+                  Fast, SEO-Friendly
                 </span>
                 <br />
-                Experiences
+                Web Apps
               </h1>
             </motion.div>
 
@@ -126,9 +167,10 @@ export default function Hero() {
                 max-w-xl
               "
             >
-              Full-Stack Engineer with experience building production-grade
-              applications using React, Next.js, Node.js, TypeScript, Redis,
-              Kafka, and scalable cloud infrastructure.
+              React and Next.js developer building production-grade web
+              applications with TypeScript and Node.js. Experienced in reusable
+              UI components, REST API integration and performance optimization,
+              from healthcare dashboards to full-stack products.
             </motion.p>
 
             <motion.div
@@ -143,16 +185,44 @@ export default function Hero() {
                 gap-3
               "
             >
-              {[
-                "Next.js",
-                "TypeScript",
-                "Node.js",
-                "Kafka",
-                "Redis",
-                "Docker",
-              ].map((tech, index) => (
+              {proofPoints.map((point) => (
                 <div
-                  key={index}
+                  key={point}
+                  className="
+                    inline-flex
+                    items-center
+                    gap-2
+                    px-4 py-2
+                    rounded-full
+                    text-sm
+                    font-medium
+                    border border-emerald-400/20
+                    bg-emerald-500/10
+                    text-emerald-300
+                    backdrop-blur-xl
+                  "
+                >
+                  <Gauge size={16} aria-hidden="true" />
+                  {point}
+                </div>
+              ))}
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.6,
+                delay: 0.55,
+              }}
+              className="
+                flex flex-wrap
+                gap-3
+              "
+            >
+              {techStack.map((tech) => (
+                <div
+                  key={tech}
                   className="
                     px-4 py-2
                     rounded-full
@@ -207,10 +277,11 @@ export default function Hero() {
                   hover:shadow-[0_0_45px_rgba(139,92,246,0.5)]
                 "
               >
-                <Download size={18} />
+                <Download size={18} aria-hidden="true" />
                 Download Resume
                 <ArrowRight
                   size={18}
+                  aria-hidden="true"
                   className="
                     transition-transform duration-300
                     group-hover:translate-x-1
@@ -251,61 +322,37 @@ export default function Hero() {
                 gap-4
               "
             >
-              <motion.a
-                href="https://linkedin.com/in/shubham-semwal-224540172"
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{
-                  scale: 1.1,
-                  y: -3,
-                }}
-                whileTap={{
-                  scale: 0.95,
-                }}
-                className="
-                  w-12 h-12
-                  rounded-2xl
-                  border border-white/10
-                  bg-white/5
-                  text-slate-300
-                  flex items-center justify-center
-                  backdrop-blur-xl
-                  transition-all duration-300
-                  hover:border-violet-400/30
-                  hover:bg-violet-500/10
-                  hover:text-white
-                "
-              >
-                <CiLinkedin size={20} />
-              </motion.a>
-
-              <motion.a
-                href="https://github.com/shubham12-prof"
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{
-                  scale: 1.1,
-                  y: -3,
-                }}
-                whileTap={{
-                  scale: 0.95,
-                }}
-                className="
-                  w-12 h-12
-                  rounded-2xl
-                  border border-white/10
-                  bg-white/5
-                  text-slate-300
-                  flex items-center justify-center
-                  backdrop-blur-xl
-                  transition-all duration-300
-                  hover:border-cyan-400/30
-                  hover:bg-cyan-500/10
-                  hover:text-white
-                "
-              >
-                <FaGithub size={20} />
-              </motion.a>
+              {socialLinks.map((social) => (
+                <motion.a
+                  key={social.label}
+                  href={social.href}
+                  aria-label={social.label}
+                  {...(social.external
+                    ? { target: "_blank", rel: "noopener noreferrer" }
+                    : {})}
+                  whileHover={{
+                    scale: 1.1,
+                    y: -3,
+                  }}
+                  whileTap={{
+                    scale: 0.95,
+                  }}
+                  className={`
+                    w-12 h-12
+                    rounded-2xl
+                    border border-white/10
+                    bg-white/5
+                    text-slate-300
+                    flex items-center justify-center
+                    backdrop-blur-xl
+                    transition-all duration-300
+                    hover:text-white
+                    ${social.hover}
+                  `}
+                >
+                  {social.icon}
+                </motion.a>
+              ))}
             </motion.div>
           </div>
 
@@ -338,6 +385,7 @@ export default function Hero() {
                 to-cyan-500/20
                 blur-3xl
                 rounded-full
+                pointer-events-none
               "
             />
 
@@ -349,33 +397,20 @@ export default function Hero() {
                 md:h-125
                 rounded-4xl
                 border border-white/10
-                bg-white/5
-                backdrop-blur-2xl
+                bg-linear-to-br
+                from-[#111827]
+                via-[#1e1b4b]
+                to-[#0f172a]
                 overflow-hidden
                 shadow-[0_0_50px_rgba(139,92,246,0.18)]
               "
             >
-              <div
-                className="
-                  w-full h-full
-                  bg-linear-to-br
-                  from-[#111827]
-                  via-[#1e1b4b]
-                  to-[#0f172a]
-                  flex items-center justify-center
-                "
-              >
-                <span className="text-slate-400 text-sm">
-                  Add Your Professional Photo
-                </span>
-              </div>
-
               <Image
                 src={portfolio}
-                alt="Shubham Semwal"
-                sizes="500px"
+                alt="Shubham Semwal, React and Next.js developer"
+                sizes="(min-width: 768px) 400px, 320px"
                 fill
-                className="object-cover"
+                className="object-cover object-top"
                 priority
               />
             </div>
